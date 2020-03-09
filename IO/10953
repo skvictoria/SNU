@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string> //getline()
+
+using namespace std;
+
+int main() {
+
+	int num;
+	string num1, num2;
+	cin >> num;
+
+	for (int i = 0; i < num; ++i) {
+		getline(cin,num1, ','); // '': char &delim 이기 때문
+    getline(cin, num2);
+    cout<<stoi(num1)+stoi(num2)<<endl;
+  }
+
+	return 0;
+}
+
+///////////////TODO/////////////////////
+/*이외에도 char*, strtok_s 사용해서 구현*/
+////////////////////////////////////////

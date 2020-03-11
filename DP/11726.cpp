@@ -1,8 +1,17 @@
 #include <iostream>
 
 using namespace std;
+int arr[1001];
 
-//also use memoization
+int SOL(int n) {
+	if (n==1) arr[1] = 1;
+	else if (n == 2) arr[2] = 2;
+	if (arr[n] > 0) return arr[n];
+	if (n > 2) {
+		arr[n] = (SOL(n-1) + SOL(n-2))%10007;
+		return arr[n];
+	}
+}
 
 int main() {
 
@@ -13,15 +22,7 @@ int main() {
 	int n;
 	cin >> n;
 
-	int arr[1001];
-	arr[1] = 1;
-	arr[2] = 2;
-
-	for (int i = 3;i <= n;++i) {
-		arr[n] = (arr[n - 1] + arr[n - 2])%10007;
-	}
-
-	cout << arr[n];
+	cout << SOL(n);
 
 	return 0;
 }

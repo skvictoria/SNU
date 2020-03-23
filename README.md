@@ -1,3 +1,3 @@
-# TIL
+# PS-TIL
 
-Today I Learned
+Write what I learned today

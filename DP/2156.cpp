@@ -1,39 +1,36 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
+
 int arr[10001] = { -1 };
-int brr[10001] = { -1 };
+int dp[10001] = { -1 };
 
-int max(int a, int b) {
-	return a > b ? a : b;
-}
-
-int SOL(int n) {
-	if (n == 1) brr[1]= arr[1];
-	if (n == 2) brr[2]= arr[1] + arr[2];
-	if (n == 3) brr[3]= max(SOL(n - 1), SOL(n - 2) + arr[n]);
-	if (brr[n] >= 0) return brr[n];
-	else {
-		brr[n]= max(max(SOL(n - 1), SOL(n - 3) + arr[n - 1] + arr[n]), SOL(n - 2) + arr[n]);
-		return brr[n];
-	}
+int detminmax(int a, int b, int c) {
+	return max(max(a, b), c);
 }
 
 int main() {
-
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-
-	int num, num1;
-	cin >> num;
 	
-	for (int i = 1; i <= num; ++i) {
-		cin >> num1;
-		arr[i] = num1;
+	int num;
+	cin >> num;	
+	for (int i = 0; i < num; i++) {
+		cin >> arr[i];
 	}
+	dp[0] = arr[0];
+	dp[1] = arr[0] + arr[1];
 	
-	cout << SOL(num);
+	for (int i = 2; i < num; i++) {
+		if (i == 2) dp[2] = detminmax(arr[0] + arr[1], arr[1] + arr[2], arr[0] + arr[2]);
+		else dp[i] = detminmax(dp[i - 1], dp[i - 2] + arr[i], dp[i-3]+arr[i-1]+arr[i]);
+		
+	}
 
-	return 0;
+	
+	cout << dp[num-1];
+	
+	
 }

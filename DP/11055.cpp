@@ -51,6 +51,6 @@ int main() {
 			flag = false;
 		}
 	}
-	cout << temp<<'\n';
+	cout << temp;
 	return 0;
 }

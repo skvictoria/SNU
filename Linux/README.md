@@ -9,3 +9,9 @@
 
 - 현재 디렉토리의 하위 파일 개수 세기
 > find . -type f | wc -l
+
+
+## linux  파일 옮기기
+
+- 
+> ls -1 | head -10 | xargs -i mv "{}" /{file_path}

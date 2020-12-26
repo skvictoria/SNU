@@ -15,3 +15,9 @@
 
 - 
 > ls -1 | head -10 | xargs -i mv "{}" /{file_path}
+
+## file zip
+> zip -r $zip_file_name.zip $/path/to/curr/dir
+
+## delete all files
+> 

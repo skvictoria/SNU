@@ -22,16 +22,5 @@
 ## delete all files
 > 
 
-# rename filename
-> for file in F*png
-
->  do
-
->      new_file=$(sed 's/^..//' <<< "$file") <---- cuts first two chars
-
->      new_file=$(cut -c3- <<< "$file")      <---- the same
-
->      mv "$file" "$new_file"
-
->  done
-
+## rename filename
+> for file in F*png; do new_file=$(cut -c3- <<< "$file"); mv "$file" "$new_file"; done

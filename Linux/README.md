@@ -29,10 +29,25 @@
 ## find size n(natural number)
 > find . -size n
 
-
+> -------------------------------------------
 # partition
 
 ## set write mode to new partition
 > sudo chown yourusername .
 
 > sudo chmod 777
+
+## change mounting point of linux partition
+> cat /etc/fstab
+
+> mount -v
+
+> fuser -mv /media/john/14~~
+
+> mkdir /home/john/DLstorage
+
+> umount /media/john/14~~
+
+> mount /dev/sdc1 /home/john/DLstorage
+
+> df

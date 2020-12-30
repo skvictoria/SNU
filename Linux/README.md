@@ -28,3 +28,11 @@
 
 ## find size n(natural number)
 > find . -size n
+
+
+# partition
+
+## set write mode to new partition
+> sudo chown yourusername .
+
+> sudo chmod 777

@@ -24,3 +24,7 @@
 
 ## rename filename
 > for file in F*png; do new_file=$(cut -c3- <<< "$file"); mv "$file" "$new_file"; done
+
+
+## find size n(natural number)
+> find . -size n

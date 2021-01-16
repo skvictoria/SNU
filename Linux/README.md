@@ -51,3 +51,28 @@
 > mount /dev/sdc1 /home/john/DLstorage
 
 > df
+
+
+## NVIDIA Driver Installation
+> sudo lspci -vnn |grep VGA
+
+> sudo dpkg --add-architecture i386
+
+> sudo apt update
+
+> sudo apt install build-essential libc6:i386
+
+#### If Error occurs
+#### E: could not get lock /var/lib/dpkg/lock-frontend.
+
+  > sudo killall apt apt-get
+  
+  > sudo rm /var/lib/apt/lists/lock
+
+  > sudo rm /var/cache/apt/archives/lock
+
+  > sudo rm /var/lib/dpkg/lock*
+  
+  > sudo dpkg --configure -a
+
+  > sudo apt update

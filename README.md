@@ -1,6 +1,6 @@
 # PS-TIL
 
-** Write what I learned today **
+**Write what I learned today**
 
 ## SNU Class
 2019-1.

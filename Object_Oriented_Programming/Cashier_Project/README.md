@@ -4,7 +4,8 @@
 
 1. Retrieves the customer from the queue, popping them off.
 2. Receives the customer's desired order items in string format:
-  > <number-of-items> <name-of-item-with-no-spaces>
+  > [number-of-items] [name-of-item-with-no-spaces]
+  
 3. Multiple items are separated simply by a space
 4. If the Cashier detects an order for an invalid item that is not on the menu, it must expel() the customer.
 5. Must calculate the cost of all the items ordered, and charge the customer.
